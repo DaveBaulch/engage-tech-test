@@ -1,0 +1,19 @@
+<template>
+  <router-link :to="{ name: 'HOme', params: { id: itemData.id } }">
+    <li>
+      <img :src="itemData.logo" :alt="itemData.alt" />
+      {{ itemData.title }}
+    </li>
+  </router-link>
+</template>
+
+<script>
+export default {
+  name: 'TheNavigationItem',
+  props: {
+    itemData: {}
+  }
+};
+</script>
+
+<style scoped></style>

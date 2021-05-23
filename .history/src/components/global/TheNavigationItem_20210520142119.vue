@@ -1,0 +1,32 @@
+<template>
+  <router-link
+    :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
+    class="rounded-3xl overflow-hidden mr-6"
+  >
+    <li class="overflow-hidden flex flex-col items-center justify-center flex-shrink">
+      <div class="br-20 bg-white p-10 rounded-md overflow-hidden">
+        <img :src="itemData.logo" :alt="itemData.alt" class="border-block" />
+      </div>
+      {{ itemData.title }}
+    </li>
+  </router-link>
+</template>
+
+<script>
+export default {
+  name: "TheNavigationItem",
+  props: {
+    itemData: {
+      type: Object,
+      required: true,
+    },
+  },
+};
+</script>
+
+<style scoped>
+.router-link-active li div {
+  background-color: #ff585d;
+  color: #fff;
+}
+</style>
