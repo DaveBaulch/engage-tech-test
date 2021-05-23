@@ -11,7 +11,7 @@ import BaseButton from "@/components/ui/BaseButton";
 export default {
   name: "Enquire",
   components: {
-    BaseButton,
-  },
+    BaseButton
+  }
 };
 </script>

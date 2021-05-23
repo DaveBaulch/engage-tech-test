@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import BaseButton from "@/components/ui/BaseButton";
+import BaseButton from c@/components/ui/BaseButton';
 
 export default {
-  name: "Enquire",
+  name: 'Enquirec',22/index/cats
   components: {
-    BaseButton,
-  },
+    BaseButton
+  }
 };
 </script>
