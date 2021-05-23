@@ -8,10 +8,10 @@
         <div class="overflow-hidden rounded-tl-md rounded-bl-md rounded-br-50">
           <img :src="itemData.image" :alt="itemData.name" />
         </div>
-        <div class="p-8">
+        <div class="p-6">
           <dl>
             <dt>
-              <h2 class="text-2xl font-bold mt-2">{{ itemData.name }}</h2>
+              <h2 class="text-4xl font-bold mt-2">{{ itemData.name }}</h2>
             </dt>
             <dd class="text-l font-semibold mt-4">
               <p v-html="itemData.type" />

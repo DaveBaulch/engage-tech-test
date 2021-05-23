@@ -11,7 +11,7 @@
         <div class="p-8">
           <dl>
             <dt>
-              <h2 class="text-2xl font-bold mt-2">{{ itemData.name }}</h2>
+              <h2 class="text-3xl font-bold mt-2">{{ itemData.name }}</h2>
             </dt>
             <dd class="text-l font-semibold mt-4">
               <p v-html="itemData.type" />
