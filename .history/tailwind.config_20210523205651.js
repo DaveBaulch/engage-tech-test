@@ -11,12 +11,14 @@ module.exports = {
       large: "12px",
       50: "50%",
     },
+    extend: {},
+  },
+  variants: {
     extend: {
       colors: {
-        "brand-red": "#ff585d",
-      },
+      'regal-blue': '#243c5a',
+      }
     },
   },
-  variants: {},
   plugins: [],
 };

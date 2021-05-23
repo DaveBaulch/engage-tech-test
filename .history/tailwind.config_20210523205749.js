@@ -11,12 +11,10 @@ module.exports = {
       large: "12px",
       50: "50%",
     },
-    extend: {
-      colors: {
-        "brand-red": "#ff585d",
-      },
-    },
+    extend: {},
   },
-  variants: {},
+  variants: {
+
+  },
   plugins: [],
 };
