@@ -1,10 +1,10 @@
 <template>
-  <li class="nav-item mr-6">
+  <li class="font-semibold">
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
     >
-      <div class="flex flex-col bg-white p-6 mb-2 rounded-md">
+      <div class="nav-item flex flex-col bg-white p-6 rounded-md">
         <img
           :src="require(`@/assets/${itemData.image}.svg`)"
           class="border-block w-14"
@@ -18,7 +18,7 @@
           role="none"
         />
       </div>
-      <span class="flex justify-center font-semibold">
+      <span class="flex justify-center">
         {{ itemData.title }}
       </span>
     </router-link>

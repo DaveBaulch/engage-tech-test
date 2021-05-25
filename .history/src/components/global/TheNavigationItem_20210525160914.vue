@@ -1,13 +1,13 @@
 <template>
-  <li class="nav-item mr-6">
+  <li class="nav-item font-semibold mr-6">
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
     >
-      <div class="flex flex-col bg-white p-6 mb-2 rounded-md">
-        <img
+      <div class="flex flex-col bg-white p-6 rounded-md">
+        <svg
           :src="require(`@/assets/${itemData.image}.svg`)"
-          class="border-block w-14"
+          class="border-block w-14 fill-current"
           alt=""
           role="none"
         />
@@ -18,7 +18,7 @@
           role="none"
         />
       </div>
-      <span class="flex justify-center font-semibold">
+      <span class="flex justify-center">
         {{ itemData.title }}
       </span>
     </router-link>
@@ -51,7 +51,7 @@ export default {
   display: block;
 }
 
-.router-link-active img:nth-child(2) {
+.router-link-active div img:nth-child(2) {
   display: none;
 }
 </style>

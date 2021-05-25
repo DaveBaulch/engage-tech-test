@@ -1,5 +1,5 @@
 <template>
-  <li class="nav-item mr-6">
+  <li class="mr-6">
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.router-link-active div {
+.router-link-active .nav-item {
   background-color: #ff585d;
   color: #ffffff;
 }

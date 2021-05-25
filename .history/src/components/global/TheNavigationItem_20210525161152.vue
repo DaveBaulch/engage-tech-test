@@ -1,10 +1,10 @@
 <template>
-  <li class="nav-item mr-6">
+  <li class="mr-6">
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
     >
-      <div class="flex flex-col bg-white p-6 mb-2 rounded-md">
+      <div class="nav-item flex flex-col bg-white p-6 mb-2 rounded-md">
         <img
           :src="require(`@/assets/${itemData.image}.svg`)"
           class="border-block w-14"
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.router-link-active div {
+.router-link-active .nav-item {
   background-color: #ff585d;
   color: #ffffff;
 }

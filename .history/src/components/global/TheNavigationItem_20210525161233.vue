@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.router-link-active div {
+.router-link-active div.nav-item {
   background-color: #ff585d;
   color: #ffffff;
 }
