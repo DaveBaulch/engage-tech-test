@@ -25,13 +25,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.router-link-active div {
-  background-color: #ff585d;
-}
-
-.router-link-active svg {
-  fill: #ffffff !important;
-}
-</style>

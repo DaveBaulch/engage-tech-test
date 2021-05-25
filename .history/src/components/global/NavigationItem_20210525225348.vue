@@ -26,12 +26,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+svg * {
+  fill: #000000;
+}
 .router-link-active div {
   background-color: #ff585d;
 }
 
-.router-link-active svg {
-  fill: #ffffff !important;
+.router-link-active svg * {
+  fill: #ffffff;
 }
 </style>
