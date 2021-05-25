@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import VuePageTransition from "vue-page-transition";
 
 Vue.use(Vuex);
 
