@@ -8,8 +8,10 @@
         <div
           class="
             overflow-hidden
-            rounded-tl-md rounded-bl-md rounded-br-md rounded-br-card
-            w-32
+            rounded-tl-md rounded-bl-md rounded-br-50
+            flex
+            w-64
+            relative
           "
         >
           <img
@@ -17,8 +19,9 @@
             :alt="itemData.name"
             class="object-cover h-full"
           />
+          <span class="border-black absolute w-64 br-32"></span>
         </div>
-        <div class="p-7 flex-1">
+        <div class="p-8">
           <dl>
             <dt>
               <h2 class="text-2xl font-bold mt-2">{{ itemData.name }}</h2>

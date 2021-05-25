@@ -9,7 +9,7 @@
           class="
             overflow-hidden
             rounded-tl-md rounded-bl-md rounded-br-md rounded-br-card
-            w-32
+            relative
           "
         >
           <img
@@ -18,7 +18,7 @@
             class="object-cover h-full"
           />
         </div>
-        <div class="p-7 flex-1">
+        <div class="p-8">
           <dl>
             <dt>
               <h2 class="text-2xl font-bold mt-2">{{ itemData.name }}</h2>

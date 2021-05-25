@@ -9,7 +9,7 @@ module.exports = {
       lg: "0.5rem",
       full: "9999px",
       large: "12px",
-      card: "5rem",
+      card: "32rem",
     },
     extend: {
       colors: {
