@@ -1,7 +1,7 @@
 <template>
   <nav aria-live="polite" aria-label="Category items">
     <ul class="m-6 pt-6" role="list">
-      <ItemListItem
+      <TheItemListItem
         v-for="item in categoryItems"
         :itemData="item"
         :key="item.id"
