@@ -43,11 +43,26 @@ export default {
   }
 }
 
-/* If animations are reduced at the OS level, use simpler transitions */
-@media screen and (prefers-reduced-motion: reduce) {
-  .slide-enter-active,
-  .slide-leave-active {
-    animation: none !important;
+/* Set default durations */
+:root {
+  --animation-duration: 250ms;
+  --transition-duration: 250ms;
+}
+
+/* Contextually shorten duration length */
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  :root {
+    --animation-duration: 0.001ms !important;
+    --transition-duration: 0.001ms !important;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  /* Remove duration for all unknown animation when a user requests a reduced animation experience */
+  * {
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--animation-duration);
   }
 }
 </style>

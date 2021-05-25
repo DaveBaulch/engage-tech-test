@@ -30,27 +30,27 @@ export default {
   },
   methods: {
     forceRerender() {
-      const animationIsOkay = window.matchMedia(
-        "(prefers-reduced-motion:no-preference)"
-      ).matches;
+
+      const animationIsOkay = window.matchMedia('(prefers-reduced-motion:no-preference)').matches;
 
       if (animationIsOkay) {
-        gsap.fromTo(
-          ".list-item",
-          {
-            y: 0,
-            opacity: 0,
-          },
-          {
-            y: -20,
-            opacity: 1,
-            duration: 1,
-            stagger: {
-              each: 0.5,
-            },
-          }
-        );
+        
       }
+      gsap.fromTo(
+        ".list-item",
+        {
+          y: 0,
+          opacity: 0,
+        },
+        {
+          y: -20,
+          opacity: 1,
+          duration: 1,
+          stagger: {
+            each: 0.5,
+          },
+        }
+      );
     },
   },
   mounted() {

@@ -25,27 +25,26 @@ export default {
     },
   },
   mounted() {
-    const animationIsOkay = window.matchMedia(
-      "(prefers-reduced-motion:no-preference)"
-    ).matches;
+          const animationIsOkay = window.matchMedia(
+        "(prefers-reduced-motion:no-preference)"
+      ).matches;
 
-    if (animationIsOkay) {
-      gsap.fromTo(
-        ".nav-item",
-        {
-          y: 0,
-          opacity: 0,
+      if (animationIsOkay) {
+    gsap.fromTo(
+      ".nav-item",
+      {
+        y: 0,
+        opacity: 0,
+      },
+      {
+        y: 20,
+        opacity: 1,
+        duration: 0.5,
+        stagger: {
+          each: 0.25,
         },
-        {
-          y: 20,
-          opacity: 1,
-          duration: 0.5,
-          stagger: {
-            each: 0.25,
-          },
-        }
-      );
-    }
+      }
+    );
   },
 };
 </script>

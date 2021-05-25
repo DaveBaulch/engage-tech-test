@@ -13,6 +13,8 @@ export default {
 </script>
 
 <style>
+
+
 .slide-enter-active {
   animation: slide-in 200ms ease-out forwards;
 }
@@ -40,14 +42,6 @@ export default {
   to {
     opacity: 0;
     transform: translateY(-30px);
-  }
-}
-
-/* If animations are reduced at the OS level, use simpler transitions */
-@media screen and (prefers-reduced-motion: reduce) {
-  .slide-enter-active,
-  .slide-leave-active {
-    animation: none !important;
   }
 }
 </style>

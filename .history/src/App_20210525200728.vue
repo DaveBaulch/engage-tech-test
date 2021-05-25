@@ -45,9 +45,17 @@ export default {
 
 /* If animations are reduced at the OS level, use simpler transitions */
 @media screen and (prefers-reduced-motion: reduce) {
-  .slide-enter-active,
-  .slide-leave-active {
-    animation: none !important;
+  .next-enter {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+  }
+
+  .next-enter-active,
+  .next-leave-active { transition: 0.5s; }
+
+  .next-leave-to {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
   }
 }
 </style>
