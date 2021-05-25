@@ -54,7 +54,6 @@ Vue.directive("animate", {
     if (!setup.length) {
       // check for dynamic modifier
       setup = binding.arg.split(".").slice(1);
-      setup = binding.arg;
     }
     if (setup.length) {
       setup.forEach((setup) => {
@@ -74,7 +73,6 @@ Vue.directive("animate", {
     if (binding.arg) {
       [arg] = binding.arg.split(".");
     }
-
     // get the animation data from the argument or the value if set
     let animation = arg ? { ...animations[arg] } : binding.value;
 
@@ -82,6 +80,11 @@ Vue.directive("animate", {
     if (arg && binding.value) {
       animation = { ...animation, ...binding.value };
     }
+
+    // // apply stagger timing
+    // if (stagger) {
+    //   animation.delay += stagger;
+    // }
 
     // run gsap on element with animation data
     if (el.nodeName === "IMG" && !el.complete) {

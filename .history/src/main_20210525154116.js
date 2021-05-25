@@ -9,18 +9,6 @@ import gsap from "gsap";
 Vue.config.productionTip = false;
 Vue.use(VueMeta);
 
-// setup types
-const setups = {
-  hide: {
-    opacity: 0,
-  },
-};
-setups.hideLeft = { ...setups.hide, x: -40 };
-setups.hideRight = { ...setups.hide, x: 40 };
-setups.hideUp = { ...setups.hide, y: -40 };
-setups.hideDown = { ...setups.hide, y: 40 };
-setups.hideDownFar = { ...setups.hide, y: 100 };
-
 // animation types
 const animations = {
   appear: {
@@ -36,6 +24,18 @@ animations.appearLongDelay = { ...animations.appearLong, delay: 0.6 };
 animations.appearShort = { ...animations.appear, duration: 0.3 };
 animations.appearShortDelay = { ...animations.appear, delay: 0.3 };
 animations.appearDelay = { ...animations.appear, delay: 0.6 };
+
+// setup types
+const setups = {
+  hide: {
+    opacity: 0,
+  },
+};
+setups.hideLeft = { ...setups.hide, x: -40 };
+setups.hideRight = { ...setups.hide, x: 40 };
+setups.hideUp = { ...setups.hide, y: -40 };
+setups.hideDown = { ...setups.hide, y: 40 };
+setups.hideDownFar = { ...setups.hide, y: 100 };
 
 /**
  * v-animate directive
@@ -53,13 +53,11 @@ Vue.directive("animate", {
     let setup = Object.keys(binding.modifiers);
     if (!setup.length) {
       // check for dynamic modifier
-      setup = binding.arg.split(".").slice(1);
-      setup = binding.arg;
+      setup = binding.arg.split(":").slice(1);
     }
     if (setup.length) {
-      setup.forEach((setup) => {
-        gsap.set(el, setups[setup]);
-      });
+      const theSetup = setup[0];
+      gsap.set(el, { ...setups[theSetup] });
     }
   },
 
@@ -70,23 +68,49 @@ Vue.directive("animate", {
     }
 
     // remove any dynamic modifiers from the arg
-    let arg;
-    if (binding.arg) {
-      [arg] = binding.arg.split(".");
+    // let arg;
+    // if (binding) {
+    //   [arg] = binding.arg.split(".");
+    // }
+
+    let setup = Object.keys(binding.modifiers);
+
+    if (!setup.length) {
+      // check for dynamic modifier
+      setup = binding.arg.split(".").slice(1);
     }
 
     // get the animation data from the argument or the value if set
-    let animation = arg ? { ...animations[arg] } : binding.value;
+    let theAnimation = null;
+    if (setup.length > 1) {
+      theAnimation = setup[1];
+    }
+    let animation = null;
+    animation = theAnimation ? { ...animations[theAnimation] } : binding.value;
 
     // override default options of animation when both argument and value exist
-    if (arg && binding.value) {
+    if (theAnimation && binding.value) {
       animation = { ...animation, ...binding.value };
     }
+
+    // // if we are staggering then it is within a v-for loop
+    // let stagger = null;
+    // if (arg && arg.includes("stagger")) {
+    //   const parent = el.parentNode;
+    //   const index = Array.prototype.indexOf.call(parent.children, el);
+    //   stagger = index * 0.3;
+    // }
+
+    // // apply stagger timing
+    // if (stagger !== null) {
+    //   animation.delay += stagger;
+    // }
 
     // run gsap on element with animation data
     if (el.nodeName === "IMG" && !el.complete) {
       el.addEventListener("load", () => gsap.to(el, animation));
     } else {
+      //console.log(animation);
       gsap.to(el, animation);
     }
   },

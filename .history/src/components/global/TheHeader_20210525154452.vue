@@ -4,7 +4,7 @@
       <TheLogo
         width="50%"
         class="flex justify-center"
-        v-animate:appearShortDelay.hideUp
+        v-animate:appearShortDelay
       />
     </h1>
   </header>

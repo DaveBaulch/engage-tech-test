@@ -54,10 +54,10 @@ Vue.directive("animate", {
     if (!setup.length) {
       // check for dynamic modifier
       setup = binding.arg.split(".").slice(1);
-      setup = binding.arg;
     }
     if (setup.length) {
       setup.forEach((setup) => {
+        alert(setup);
         gsap.set(el, setups[setup]);
       });
     }

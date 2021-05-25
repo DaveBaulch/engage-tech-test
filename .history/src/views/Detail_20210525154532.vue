@@ -6,7 +6,7 @@
       type="router-link"
       text="Back"
       class="absolute top-6 left-4"
-      v-animate:appearLongDelay.hideLeft
+      v-animate:hideLeft.appearLongDelay
     >
       <img :src="arrowBack" alt="Back" width="25" />
       <span class="sr-only">Back</span>

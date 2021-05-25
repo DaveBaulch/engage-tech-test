@@ -6,7 +6,7 @@
       type="router-link"
       text="Back"
       class="absolute top-6 left-4"
-      v-animate:appearLongDelay.hideLeft
+      v-animate:hideLeft.appearLongDelay
     >
       <img :src="arrowBack" alt="Back" width="25" />
       <span class="sr-only">Back</span>
@@ -17,7 +17,7 @@
       type="router-link"
       text="Enquire"
       class="absolute top-4 right-4 bg-brand-red text-white flex"
-      v-animate:appearLongDelay.hideRight
+      v-animate:hideRight.appearLongDelay
     >
       <span class="mr-2">Enquire</span>
       <img :src="chevronRight" alt="Back" width="8" class="mt-1" />

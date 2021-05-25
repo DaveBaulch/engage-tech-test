@@ -51,15 +51,15 @@ Vue.directive("animate", {
   // apply setups
   bind(el, binding) {
     let setup = Object.keys(binding.modifiers);
-    if (!setup.length) {
-      // check for dynamic modifier
-      setup = binding.arg.split(".").slice(1);
-      setup = binding.arg;
-    }
+    // if (!setup.length) {
+    //   // check for dynamic modifier
+    //   setup = binding.arg.split(".").slice(1);
+    //   alert(setup);
+    // }
     if (setup.length) {
-      setup.forEach((setup) => {
-        gsap.set(el, setups[setup]);
-      });
+      //setup.forEach((setup) => {
+      gsap.set(el, setups[setup]);
+      //});
     }
   },
 

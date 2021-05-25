@@ -47,14 +47,13 @@ animations.appearDelay = { ...animations.appear, delay: 0.6 };
  * v-animate:appear.hide="{duration: 0.2}"
  */
 
-Vue.directive("animate", {
+vue.directive("animate", {
   // apply setups
   bind(el, binding) {
     let setup = Object.keys(binding.modifiers);
     if (!setup.length) {
       // check for dynamic modifier
       setup = binding.arg.split(".").slice(1);
-      setup = binding.arg;
     }
     if (setup.length) {
       setup.forEach((setup) => {
@@ -75,12 +74,26 @@ Vue.directive("animate", {
       [arg] = binding.arg.split(".");
     }
 
+    // if we are staggering then it is within a v-for loop
+    let stagger = 0;
+    if (arg && arg.includes(":stagger")) {
+      const parent = el.parentNode;
+      const index = Array.prototype.indexOf.call(parent.children, el);
+      stagger = index * 0.3;
+      arg = arg.replace(":stagger", "");
+    }
+
     // get the animation data from the argument or the value if set
     let animation = arg ? { ...animations[arg] } : binding.value;
 
     // override default options of animation when both argument and value exist
     if (arg && binding.value) {
       animation = { ...animation, ...binding.value };
+    }
+
+    // apply stagger timing
+    if (stagger) {
+      animation.delay += stagger;
     }
 
     // run gsap on element with animation data
