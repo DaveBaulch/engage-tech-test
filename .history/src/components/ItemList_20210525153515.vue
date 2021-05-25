@@ -28,21 +28,21 @@ export default {
   },
   methods: {
     forceRerender() {
-      gsap.fromTo(
-        ".list-item",
-        {
-          y: 0,
-          opacity: 0,
+      gsap.fromTo(".list-item", 
+       {
+        y: -20,
+        opacity: 1,
+        duration: 0.5,
+        stagger: {
+          each: 0.5,
+        },{
+        y: -20,
+        opacity: 1,
+        duration: 0.5,
+        stagger: {
+          each: 0.5,
         },
-        {
-          y: -20,
-          opacity: 1,
-          duration: 1,
-          stagger: {
-            each: 0.5,
-          },
-        }
-      );
+      });
     },
   },
   mounted() {

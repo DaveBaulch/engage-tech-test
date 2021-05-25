@@ -25,21 +25,19 @@ export default {
     },
   },
   mounted() {
-    gsap.fromTo(
-      ".nav-item",
-      {
-        y: 0,
-        opacity: 0,
-      },
-      {
-        y: 20,
-        opacity: 1,
-        duration: 0.5,
-        stagger: {
-          each: 0.25,
+     gsap.fromTo(
+        ".list-item",
+        {
+          y: 0,
+          opacity: 0,
         },
-      }
-    );
+      y: 20,
+      opacity: 1,
+      duration: 0.5,
+      stagger: {
+        each: 0.25,
+      },
+    });
   },
 };
 </script>
