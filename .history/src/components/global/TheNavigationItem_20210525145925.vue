@@ -9,13 +9,19 @@
       transition-all
       duration-400
     "
-    
   >
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
     >
-      <div class="flex flex-col bg-white p-6 rounded-md">
+      <div
+        class="
+          flex flex-col
+          bg-white
+          p-6
+          rounded-md
+        "
+      >
         <img
           :src="require(`@/assets/${itemData.image}.svg`)"
           class="border-block w-14"
@@ -29,7 +35,7 @@
           role="none"
         />
       </div>
-      <span class="flex justify-center">
+      <span>
         {{ itemData.title }}
       </span>
     </router-link>

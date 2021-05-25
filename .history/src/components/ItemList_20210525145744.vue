@@ -5,6 +5,7 @@
         v-for="item in categoryItems"
         :itemData="item"
         :key="item.id"
+        @click="forceRerender()"
       />
     </ul>
   </nav>
@@ -26,9 +27,12 @@ export default {
       );
     },
   },
+  updated() {
+    this.forceRerender();
+  },
   methods: {
     forceRerender() {
-      gsap.to(".list-item", {
+      gsap.to(".list-iterm", {
         y: -20,
         opacity: 1,
         duration: 0.5,
@@ -41,8 +45,5 @@ export default {
   mounted() {
     this.forceRerender();
   },
-  updated() {
-    this.forceRerender();
-  }  
 };
 </script>

@@ -9,7 +9,6 @@
       transition-all
       duration-400
     "
-    
   >
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
@@ -29,7 +28,7 @@
           role="none"
         />
       </div>
-      <span class="flex justify-center">
+      <span class="items-center justify-center">
         {{ itemData.title }}
       </span>
     </router-link>

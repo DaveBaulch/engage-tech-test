@@ -1,21 +1,23 @@
 <template>
-  <li
-    class="
-      rounded-3xl
-      overflow-hidden
-      nav-link
-      font-semibold
-      mr-6
-      transition-all
-      duration-400
-    "
-    
-  >
+  <li class="rounded-3xl overflow-hidden nav-link br-20 font-semibold mr-6">
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
+      v-animate:stagger.hideUp.appearShortDelay
     >
-      <div class="flex flex-col bg-white p-6 rounded-md">
+      <div
+        class="
+          overflow-hidden
+          flex flex-col
+          items-center
+          justify-center
+          bg-white
+          p-6
+          rounded-md
+          transition-all
+          duration-400
+        "
+      >
         <img
           :src="require(`@/assets/${itemData.image}.svg`)"
           class="border-block w-14"
@@ -29,7 +31,7 @@
           role="none"
         />
       </div>
-      <span class="flex justify-center">
+      <span>
         {{ itemData.title }}
       </span>
     </router-link>

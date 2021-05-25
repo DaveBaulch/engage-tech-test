@@ -5,6 +5,7 @@
         v-for="item in categoryItems"
         :itemData="item"
         :key="item.id"
+        v-animate:stagger.hideUp.appearShortDelay
       />
     </ul>
   </nav>
@@ -26,6 +27,9 @@ export default {
       );
     },
   },
+  updated() {
+    this.forceRerender();
+  },
   methods: {
     forceRerender() {
       gsap.to(".list-item", {
@@ -41,8 +45,5 @@ export default {
   mounted() {
     this.forceRerender();
   },
-  updated() {
-    this.forceRerender();
-  }  
 };
 </script>

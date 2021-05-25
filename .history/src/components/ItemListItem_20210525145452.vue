@@ -1,5 +1,5 @@
 <template>
-  <li class="mb-6 rounded-md">
+  <li class="mb-6 rounded-md ">
     <router-link
       :to="{ name: 'detail', params: { itemId: itemData.id } }"
       class="list-item"

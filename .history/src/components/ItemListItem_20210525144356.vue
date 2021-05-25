@@ -1,9 +1,7 @@
 <template>
-  <li class="mb-6 rounded-md">
-    <router-link
-      :to="{ name: 'detail', params: { itemId: itemData.id } }"
-      class="list-item"
-    >
+
+    <li class="mb-6 rounded-md">
+      
       <article class="flex bg-white rounded-md shadow-xl">
         <div class="overflow-hidden rounded-tl-md rounded-bl-md rounded-br-50">
           <img :src="itemData.image" :alt="itemData.name" />
@@ -25,8 +23,8 @@
           </dl>
         </div>
       </article>
-    </router-link>
-  </li>
+    </li>
+  </router-link>
 </template>
 
 <script>

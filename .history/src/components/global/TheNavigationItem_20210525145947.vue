@@ -9,7 +9,6 @@
       transition-all
       duration-400
     "
-    
   >
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"

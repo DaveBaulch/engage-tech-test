@@ -43,6 +43,6 @@ export default {
   },
   updated() {
     this.forceRerender();
-  }  
+  },  
 };
 </script>

@@ -1,10 +1,11 @@
 <template>
   <nav aria-live="polite">
-    <ul class="m-6 pt-6" role="list">
+    <ul class="m-6 list-none pt-6" role="">
       <TheItemListItem
         v-for="item in categoryItems"
         :itemData="item"
         :key="item.id"
+        @click="forceRerender()"
       />
     </ul>
   </nav>
@@ -26,6 +27,9 @@ export default {
       );
     },
   },
+  updated() {
+    this.forceRerender();
+  },
   methods: {
     forceRerender() {
       gsap.to(".list-item", {
@@ -41,8 +45,5 @@ export default {
   mounted() {
     this.forceRerender();
   },
-  updated() {
-    this.forceRerender();
-  }  
 };
 </script>

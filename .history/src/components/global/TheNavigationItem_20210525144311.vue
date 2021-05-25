@@ -1,21 +1,26 @@
 <template>
-  <li
-    class="
-      rounded-3xl
-      overflow-hidden
-      nav-link
-      font-semibold
-      mr-6
-      transition-all
-      duration-400
-    "
-    
-  >
-    <router-link
-      :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
-      class=""
+
+    <li
+      class="
+        overflow-hidden
+        flex flex-col
+        items-center
+        justify-center
+        flex-shrink
+        font-semibold
+      "
     >
-      <div class="flex flex-col bg-white p-6 rounded-md">
+      <div
+        class="
+          br-20
+          bg-white
+          p-6
+          rounded-md
+          overflow-hidden
+          transition-all
+          duration-400
+        "
+      >
         <img
           :src="require(`@/assets/${itemData.image}.svg`)"
           class="border-block w-14"
@@ -29,11 +34,9 @@
           role="none"
         />
       </div>
-      <span class="flex justify-center">
-        {{ itemData.title }}
-      </span>
-    </router-link>
-  </li>
+      {{ itemData.title }}
+    </li>
+  </router-link>
 </template>
 
 <script>
@@ -49,20 +52,20 @@ export default {
 </script>
 
 <style scoped>
-.router-link-active div {
+.router-link-active li div {
   background-color: #ff585d;
   color: #ffffff;
 }
 
-.nav-link div img:nth-child(1) {
+.nav-link li div img:nth-child(1) {
   display: none;
 }
 
-.router-link-active div img:nth-child(1) {
+.router-link-active li div img:nth-child(1) {
   display: block;
 }
 
-.router-link-active div img:nth-child(2) {
+.router-link-active li div img:nth-child(2) {
   display: none;
 }
 </style>

@@ -4,7 +4,7 @@
       v-for="item in navData"
       :itemData="item"
       :key="item.id"
-      v-animate:stagger.hideUp.appearShortDelay
+      v-animate:stagger.hideUp
     />
   </ul>
 </template>
