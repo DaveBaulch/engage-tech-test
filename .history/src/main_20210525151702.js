@@ -68,10 +68,10 @@ Vue.directive("animate", {
     }
 
     // remove any dynamic modifiers from the arg
-    // let arg;
-    // if (binding) {
-    //   [arg] = binding.arg.split(".");
-    // }
+    let arg;
+    if (binding) {
+      [arg] = binding.arg.split(".");
+    }
 
     let setup = Object.keys(binding.modifiers);
 

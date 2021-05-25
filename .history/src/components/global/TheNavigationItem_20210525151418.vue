@@ -1,5 +1,14 @@
 <template>
-  <li class="nav-item font-semibold mr-6">
+  <li
+    class="
+      rounded-3xl
+      overflow-hidden
+      nav-item
+      font-semibold
+      mr-6
+      duration-400
+    "
+  >
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""

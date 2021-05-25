@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     gsap.to(".nav-item", {
-      y: 0,
+      y: 20,
       opacity: 1,
       duration: 0.5,
       stagger: {

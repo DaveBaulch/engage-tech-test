@@ -23,16 +23,6 @@ export default {
       return this.$store.getters["getCategorys"];
     },
   },
-  mounted() {
-    gsap.to(".nav-item", {
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: {
-        each: 0.25,
-      },
-    });
-  },
 };
 </script>
 

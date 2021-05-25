@@ -1,5 +1,15 @@
 <template>
-  <li class="nav-item font-semibold mr-6">
+  <li
+    class="
+      rounded-3xl
+      overflow-hidden
+      nav-link
+      font-semibold
+      mr-6
+      transition-all
+      duration-400
+    "
+  >
     <router-link
       :to="{ name: 'index', params: { categoryId: itemData.categoryId } }"
       class=""
@@ -43,7 +53,7 @@ export default {
   color: #ffffff;
 }
 
-.nav-item div img:nth-child(1) {
+.nav-link div img:nth-child(1) {
   display: none;
 }
 
