@@ -1,5 +1,5 @@
 <template>
-  <nav aria-live="polite" aria-label="Category items">
+  <nav aria-live="polite">
     <ul class="m-6 pt-6" role="list">
       <TheItemListItem
         v-for="item in categoryItems"
@@ -37,9 +37,6 @@ export default {
         },
       });
     },
-  },
-  mounted() {
-    this.forceRerender();
   },
   updated() {
     this.forceRerender();

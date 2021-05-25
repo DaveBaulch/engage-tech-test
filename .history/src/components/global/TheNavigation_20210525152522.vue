@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Catgories">
+  <nav>
     <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
       <TheNavigationItem
         v-for="item in navData"
