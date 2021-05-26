@@ -27,18 +27,11 @@ export default {
 </script>
 
 <style scoped>
-/deep/ .router-link-active div {
+.router-link-active div {
   background-color: #ff585d;
-  transition: background 0.2s ease;
 }
 
-/deep/ .router-link-active svg {
+.router-link-active svg {
   fill: #ffffff !important;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  /deep/ .router-link-active div {
-    transition: none !important;
-  }
 }
 </style>

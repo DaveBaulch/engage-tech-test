@@ -37,8 +37,8 @@ export default {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  /deep/ .router-link-active div {
-    transition: none !important;
+  /deep/ .router-link-active div, {
+    animation: none !important;
   }
 }
 </style>

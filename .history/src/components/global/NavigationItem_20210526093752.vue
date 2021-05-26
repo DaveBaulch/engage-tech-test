@@ -35,10 +35,4 @@ export default {
 /deep/ .router-link-active svg {
   fill: #ffffff !important;
 }
-
-@media screen and (prefers-reduced-motion: reduce) {
-  /deep/ .router-link-active div {
-    transition: none !important;
-  }
-}
 </style>
