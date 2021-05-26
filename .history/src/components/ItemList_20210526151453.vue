@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!dataLoaded"></div>
+  <div v-if="!categoryItems || dataLoaded">Loading items...</div>
   <div v-else>
     <nav aria-live="polite" aria-label="Category items">
       <ul class="m-6 pt-6" role="list">
@@ -29,7 +29,9 @@ export default {
       );
     },
     dataLoaded() {
-      return this.categoryItems.length ? true : false;
+      if (this.categoryItems.length) {
+        return true;
+      }
     },
   },
   methods: {
@@ -58,9 +60,7 @@ export default {
     },
   },
   mounted() {
-    if (this.dataLoaded) {
-      this.forceRerender();
-    }
+    this.forceRerender();
   },
   updated() {
     this.forceRerender();

@@ -3,8 +3,7 @@
     <h1>
       <TheLogo
         width="50%"
-        class="flex justify-center"
-        v-animate:appearShortDelay.hideUp
+        class="flex justify-center motion-reduce:transition-none"
       />
     </h1>
   </header>

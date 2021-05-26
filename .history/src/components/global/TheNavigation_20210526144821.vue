@@ -1,24 +1,22 @@
 <template>
-  <div v-if="!dataLoaded"></div>
-  <div v-else>
-    <nav aria-label="Categories">
-      <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
-        <TheNavigationItem
-          v-for="item in navData"
-          :itemData="item"
-          :key="item.id"
-        >
-          <component :is="item.icon" width="50" height="50"></component>
-        </TheNavigationItem>
-      </ul>
-    </nav>
-  </div>
+  <nav aria-label="Categories">
+    <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
+      <TheNavigationItem
+        v-for="item in navData"
+        :itemData="item"
+        :key="item.id"
+      >
+        <component :is="item.icon" width="50" height="50"></component>
+      </TheNavigationItem>
+    </ul>
+  </nav>
 </template>
 
 <script>
 import TheNavigationItem from "@/components/global/NavigationItem";
 import IconCat from "@/assets/icon-cat";
 import gsap from "gsap";
+import { observable } from 'vue/types/umd';
 
 export default {
   name: "TheNavigation",
@@ -26,14 +24,12 @@ export default {
     TheNavigationItem,
     IconCat,
   },
-  computed: {
-    navData() {
-      return this.$store.getters["getCategorys"];
+  props: {
+    type: {
+      type: Object,
+      default: "router-link",
     },
-    dataLoaded() {
-      return this.navData.length ? true : false;
-    },
-  },
+  }, 
   methods: {
     forceRerender() {
       const animationIsOkay = window.matchMedia(
@@ -60,9 +56,7 @@ export default {
     },
   },
   mounted() {
-    if (this.dataLoaded) {
-      this.forceRerender();
-    }
+    this.forceRerender();
   },
   updated() {
     this.forceRerender();

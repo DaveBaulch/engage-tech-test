@@ -1,6 +1,6 @@
 <template>
-  <div v-if="!dataLoaded"></div>
-  <div v-else>
+  <div v-if="!navData">Loading...</div>
+  <div v-else></div>
     <nav aria-label="Categories">
       <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
         <TheNavigationItem
@@ -30,9 +30,6 @@ export default {
     navData() {
       return this.$store.getters["getCategorys"];
     },
-    dataLoaded() {
-      return this.navData.length ? true : false;
-    },
   },
   methods: {
     forceRerender() {
@@ -59,10 +56,8 @@ export default {
       }
     },
   },
-  mounted() {
-    if (this.dataLoaded) {
-      this.forceRerender();
-    }
+  loaded() {
+    this.forceRerender();
   },
   updated() {
     this.forceRerender();

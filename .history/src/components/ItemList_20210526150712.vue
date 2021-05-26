@@ -1,16 +1,13 @@
 <template>
-  <div v-if="!dataLoaded"></div>
-  <div v-else>
-    <nav aria-live="polite" aria-label="Category items">
-      <ul class="m-6 pt-6" role="list">
-        <ItemListItem
-          v-for="item in categoryItems"
-          :itemData="item"
-          :key="item.id"
-        />
-      </ul>
-    </nav>
-  </div>
+  <nav aria-live="polite" aria-label="Category items">
+    <ul class="m-6 pt-6" role="list">
+      <ItemListItem
+        v-for="item in categoryItems"
+        :itemData="item"
+        :key="item.id"
+      />
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -27,9 +24,6 @@ export default {
       return this.$store.getters.getCategoryItems(
         this.$route.params.categoryId
       );
-    },
-    dataLoaded() {
-      return this.categoryItems.length ? true : false;
     },
   },
   methods: {
@@ -57,10 +51,8 @@ export default {
       }
     },
   },
-  mounted() {
-    if (this.dataLoaded) {
-      this.forceRerender();
-    }
+  loaded() {
+    this.forceRerender();
   },
   updated() {
     this.forceRerender();

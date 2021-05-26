@@ -25,7 +25,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Enquire.vue"),
   },
-  { path: "*", redirect: "/index/cats" },
+  { path: "*", redirect: "/index/1" },
 ];
 
 const router = new VueRouter({

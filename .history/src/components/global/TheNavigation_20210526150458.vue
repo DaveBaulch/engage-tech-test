@@ -1,18 +1,16 @@
 <template>
-  <div v-if="!dataLoaded"></div>
-  <div v-else>
-    <nav aria-label="Categories">
-      <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
-        <TheNavigationItem
-          v-for="item in navData"
-          :itemData="item"
-          :key="item.id"
-        >
-          <component :is="item.icon" width="50" height="50"></component>
-        </TheNavigationItem>
-      </ul>
-    </nav>
-  </div>
+<div v-if="!navData">Loading Please wait...</div>
+  <nav aria-label="Categories">
+    <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
+      <TheNavigationItem
+        v-for="item in navData"
+        :itemData="item"
+        :key="item.id"
+      >
+        <component :is="item.icon" width="50" height="50"></component>
+      </TheNavigationItem>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -29,9 +27,6 @@ export default {
   computed: {
     navData() {
       return this.$store.getters["getCategorys"];
-    },
-    dataLoaded() {
-      return this.navData.length ? true : false;
     },
   },
   methods: {
@@ -60,9 +55,7 @@ export default {
     },
   },
   mounted() {
-    if (this.dataLoaded) {
-      this.forceRerender();
-    }
+    this.forceRerender();
   },
   updated() {
     this.forceRerender();

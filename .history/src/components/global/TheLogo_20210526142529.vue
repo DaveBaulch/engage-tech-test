@@ -1,36 +1,36 @@
 <template>
   <router-link to="/"
     ><img :src="logo" :alt="alt" :width="width"
-  /></router-link>
+  /></router-link v-animate:appearShortDelay.hideUp>
 </template>
 
 <script>
-import logo from "@/assets/logo.svg";
+import logo from '@/assets/logo.svg';
 
 export default {
-  name: "TheLogo",
+  name: 'TheLogo',
   props: {
     src: {
       type: String,
       default: logo,
-      required: false,
+      required: false
     },
     alt: {
       type: String,
-      default: "Engage",
-      required: false,
+      default: 'Engage',
+      required: false
     },
     width: {
       type: String,
-      default: "100%",
-      required: false,
-    },
+      default: '100%',
+      required: false
+    }
   },
 
   data() {
     return {
-      logo: this.src || logo,
+      logo: this.src || logo
     };
-  },
+  }
 };
 </script>
