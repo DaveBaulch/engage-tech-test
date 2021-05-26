@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="">
     <TheHeader />
-    <main class="bg-gray-100 flex flex-col flex-1" role="main">
+    <main class="bg-gray-100 flex flex-col" role="main">
       <TheNavigation />
       <ItemList />
     </main>

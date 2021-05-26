@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="min-h-screen">
+  <div id="app" class="min-h-screen>
     <transition name="slide" mode="out-in">
       <router-view></router-view>
     </transition>

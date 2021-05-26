@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="loading && !dataLoaded"></div>
-    <div v-else-if="!dataLoaded" class="m-6">No results.</div>
+    <div v-if="loading">Loading...</div>
+    <div v-else-if="!dataLoaded">No results.</div>
     <div v-else>
       <nav aria-live="polite" aria-label="Category items">
         <ul class="m-6 pt-6" role="list">

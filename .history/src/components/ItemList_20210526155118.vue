@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <div v-if="loading && !dataLoaded"></div>
-    <div v-else-if="!dataLoaded" class="m-6">No results.</div>
-    <div v-else>
-      <nav aria-live="polite" aria-label="Category items">
-        <ul class="m-6 pt-6" role="list">
-          <ItemListItem
-            v-for="item in categoryItems"
-            :itemData="item"
-            :key="item.id"
-          />
-        </ul>
-      </nav>
-    </div>
+  <div v-if="!dataLoaded">Loading...</div>
+  <div v-else>
+    <nav aria-live="polite" aria-label="Category items">
+      <ul class="m-6 pt-6" role="list">
+        <ItemListItem
+          v-for="item in categoryItems"
+          :itemData="item"
+          :key="item.id"
+        />
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -25,25 +22,15 @@ export default {
   components: {
     ItemListItem,
   },
-  data() {
-    return {
-      loading: true,
-    };
-  },
-  watch: {
-    categoryItems: function () {
-      this.loading = false;
-    },
-  },
   computed: {
     categoryItems() {
       return this.$store.getters.getCategoryItems(
         this.$route.params.categoryId
-      );
+      ).length ? ;
     },
     dataLoaded() {
       return this.categoryItems.length ? true : false;
-    },
+    }
   },
   methods: {
     forceRerender() {
