@@ -8,6 +8,8 @@
 
 <script>
 
+Vue = require
+// import AnimationDirective from "./directives/animations";
 export default {
   name: "App",
 };

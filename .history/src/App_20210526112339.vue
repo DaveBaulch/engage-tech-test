@@ -8,6 +8,8 @@
 
 <script>
 
+Vue = require('vue');
+Vue.component ('v-animate', require('./directives/animations.vue')
 export default {
   name: "App",
 };

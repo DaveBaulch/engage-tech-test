@@ -8,6 +8,8 @@
 
 <script>
 
+Vue = require('vue');
+Vue.component ('v-aniamate)"./directives/animations";
 export default {
   name: "App",
 };
