@@ -1,0 +1,39 @@
+
+    {
+      "id": 1,
+      "categoryId": "cats",
+      "title": "Cats",
+      "image": "icon-cat",
+      "icon": "IconCat"
+    },
+    {
+      "id": 2,
+      "categoryId": "dogs",
+      "title": "Dogs",
+      "image": "icon-cat",
+      "icon": "IconCat"
+    },
+    {
+      "id": 3,
+      "categoryId": "birds",
+      "title": "Birds",
+      "image": "icon-cat",
+      "icon": "IconCat"
+    },
+    {
+      "id": 4,
+      "categoryId": "rabbits",
+      "title": "Rabbits",
+      "image": "icon-cat",
+      "icon": "IconCat"
+    },
+    {
+      "id": 5,
+      "categoryId": "rodents",
+      "title": "Rodents",
+      "image": "icon-cat",
+      "icon": "IconCat"
+    }
+  ]
+
+}
