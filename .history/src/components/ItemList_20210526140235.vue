@@ -54,8 +54,5 @@ export default {
   mounted() {
     this.forceRerender();
   },
-  updated() {
-    this.forceRerender();
-  },
 };
 </script>

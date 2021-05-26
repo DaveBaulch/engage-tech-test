@@ -28,33 +28,31 @@ export default {
       return this.$store.getters["getCategorys"];
     },
   },
-  methods: {
-    forceRerender() {
-      const animationIsOkay = window.matchMedia(
-        "(prefers-reduced-motion:no-preference)"
-      ).matches;
+  forceRerender() {
+    const animationIsOkay = window.matchMedia(
+      "(prefers-reduced-motion:no-preference)"
+    ).matches;
 
-      if (animationIsOkay) {
-        gsap.fromTo(
-          ".nav-item",
-          {
-            y: 0,
-            opacity: 0,
+    if (animationIsOkay) {
+      gsap.fromTo(
+        ".nav-item",
+        {
+          y: 0,
+          opacity: 0,
+        },
+        {
+          y: 20,
+          opacity: 1,
+          duration: 0.5,
+          stagger: {
+            each: 0.25,
           },
-          {
-            y: 20,
-            opacity: 1,
-            duration: 0.5,
-            stagger: {
-              each: 0.25,
-            },
-          }
-        );
-      }
-    },
-  },
+        }
+      );
+    }
+  },  
   mounted() {
-    this.forceRerender();
+    
   },
   updated() {
     this.forceRerender();

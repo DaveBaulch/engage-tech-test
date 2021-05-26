@@ -5,7 +5,7 @@ import App from "./App.vue";
 import VueMeta from "vue-meta";
 import AnimationDirective from "./directives/animations";
 import "./tailwind.css";
-Vue.directive("animate", AnimationDirective);
+
 Vue.config.productionTip = false;
 
 Vue.use(VueMeta);
@@ -14,6 +14,7 @@ new Vue({
   router,
   store,
   created() {
+    Vue.directive("animate", AnimationDirective);
     const html = document.documentElement; // returns the html tag
     html.setAttribute("lang", "en");
   },

@@ -1,33 +1,34 @@
 <template>
-  <nav aria-live="polite" aria-label="Category items">
-    <ul class="m-6 pt-6" role="list">
-      <ItemListItem
-        v-for="item in categoryItems"
+  <nav aria-label="Categories">
+    <ul class="flex items-start p-6 overflow-x-scroll mr-6" role="list">
+      <TheNavigationItem
+        v-for="item in navData"
         :itemData="item"
         :key="item.id"
-      />
+      >
+        <component :is="item.icon" width="50" height="50"></component>
+      </TheNavigationItem>
     </ul>
   </nav>
 </template>
 
 <script>
-import ItemListItem from "@/components/ItemListItem";
+import TheNavigationItem from "@/components/global/NavigationItem";
+import IconCat from "@/assets/icon-cat";
 import gsap from "gsap";
 
 export default {
-  name: "ItemList",
+  name: "TheNavigation",
   components: {
-    ItemListItem,
+    TheNavigationItem,
+    IconCat,
   },
   computed: {
-    categoryItems() {
-      return this.$store.getters.getCategoryItems(
-        this.$route.params.categoryId
-      );
+    navData() {
+      return this.$store.getters["getCategorys"];
     },
   },
-  methods: {
-    forceRerender() {
+  forceRerender() {
       const animationIsOkay = window.matchMedia(
         "(prefers-reduced-motion:no-preference)"
       ).matches;
@@ -50,9 +51,9 @@ export default {
         );
       }
     },
-  },
+  },  
   mounted() {
-    this.forceRerender();
+    
   },
   updated() {
     this.forceRerender();

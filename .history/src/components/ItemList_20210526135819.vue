@@ -51,7 +51,7 @@ export default {
       }
     },
   },
-  mounted() {
+  loaded() {
     this.forceRerender();
   },
   updated() {

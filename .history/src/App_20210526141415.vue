@@ -12,7 +12,7 @@ import store from "./store";
 
 export default {
   name: "App",
-  beforeMount() {
+  created() {
     axios
       .get("../data/site-data.json")
       .then((response) => {

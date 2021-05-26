@@ -54,7 +54,9 @@ export default {
     },
   },
   mounted() {
-    this.forceRerender();
+    this.$nextTick() => {
+      this.forceRerender();
+    }
   },
   updated() {
     this.forceRerender();

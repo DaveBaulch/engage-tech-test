@@ -5,6 +5,8 @@
         v-for="item in categoryItems"
         :itemData="item"
         :key="item.id"
+        motion-reduce:transition-none
+        motion-reduce:transform-none
       />
     </ul>
   </nav>
@@ -51,7 +53,7 @@ export default {
       }
     },
   },
-  mounted() {
+  loaded() {
     this.forceRerender();
   },
   updated() {

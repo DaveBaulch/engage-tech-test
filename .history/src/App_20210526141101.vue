@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="slide" mode="out-in">
-      <router-view></router-view>
+      <router-view v></router-view>
     </transition>
   </div>
 </template>
@@ -12,7 +12,7 @@ import store from "./store";
 
 export default {
   name: "App",
-  beforeMount() {
+  created() {
     axios
       .get("../data/site-data.json")
       .then((response) => {

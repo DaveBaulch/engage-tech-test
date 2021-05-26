@@ -54,7 +54,9 @@ export default {
     },
   },
   mounted() {
-    this.forceRerender();
+    if (tthis.navData) {
+      this.forceRerender();
+    }
   },
   updated() {
     this.forceRerender();
