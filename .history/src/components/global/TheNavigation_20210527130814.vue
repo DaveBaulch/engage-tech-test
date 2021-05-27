@@ -38,7 +38,10 @@ export default {
   },
   methods: {
     forceRerender() {
-      const animationIsOkay = this.prefersReducedMotion();
+      const animationIsOkay = window.matchMedia(
+        "(prefers-reduced-motion:no-preference)"
+      ).matches;
+
       if (animationIsOkay) {
         gsap.fromTo(
           ".nav-item",

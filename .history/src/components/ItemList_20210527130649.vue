@@ -50,6 +50,8 @@ export default {
   methods: {
     forceRerender() {
       const animationIsOkay = this.prefersReducedMotion();
+      alert(animationIsOkay);
+
       if (animationIsOkay) {
         gsap.fromTo(
           ".list-item",

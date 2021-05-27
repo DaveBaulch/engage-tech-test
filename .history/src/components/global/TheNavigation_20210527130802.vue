@@ -27,7 +27,6 @@ export default {
     TheNavigationItem,
     IconCat,
   },
-  mixins: [prefersReducedMotion],
   computed: {
     navData() {
       return this.$store.getters["getCategorys"];
@@ -38,7 +37,10 @@ export default {
   },
   methods: {
     forceRerender() {
-      const animationIsOkay = this.prefersReducedMotion();
+      const animationIsOkay = window.matchMedia(
+        "(prefers-reduced-motion:no-preference)"
+      ).matches;
+
       if (animationIsOkay) {
         gsap.fromTo(
           ".nav-item",

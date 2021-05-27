@@ -1,0 +1,5 @@
+export defualt {
+  methods: {
+    prefers
+  }
+}

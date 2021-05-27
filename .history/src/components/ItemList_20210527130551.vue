@@ -18,7 +18,7 @@
 
 <script>
 import ItemListItem from "@/components/ItemListItem";
-import prefersReducedMotion from "@/mixins/prefersReducedMotion";
+import prefersReducedMotion from "@/mixins/prefersReducedMotion.js";
 import gsap from "gsap";
 
 export default {
@@ -49,7 +49,10 @@ export default {
   },
   methods: {
     forceRerender() {
-      const animationIsOkay = this.prefersReducedMotion();
+      // const animationIsOkay = window.matchMedia(
+      //   "(prefers-reduced-motion:no-preference)"
+      // ).matches;
+
       if (animationIsOkay) {
         gsap.fromTo(
           ".list-item",
